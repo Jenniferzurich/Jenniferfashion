@@ -1,5 +1,6 @@
  <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,11 +15,12 @@
       color: #222;
       scroll-behavior: smooth;
     }
+
     header {
       background: linear-gradient(120deg, #fff, #f4f4f4);
       text-align: center;
       padding: 50px 20px 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
       position: relative;
     }
 
@@ -106,7 +108,7 @@
       background-color: #fff;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
       width: 300px;
       transition: transform 0.3s;
       display: flex;
@@ -226,12 +228,14 @@
   </style>
   <script>
     let cartCount = 0;
+
     function addToCart() {
       cartCount++;
-      document.getElementById('cart-count').innerText = '(' + cartCount + ')';
+      document.getElementById('cart-count').innerText = `(${cartCount})`;
     }
   </script>
 </head>
+
 <body>
   <header>
     <div class="logo">JR</div>
@@ -332,4 +336,5 @@
     <p>Call us: +41433218698</p>
   </div>
 </body>
+
 </html>
