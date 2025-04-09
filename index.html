@@ -147,6 +147,21 @@
       background-color: #444;    
       transform: scale(1.05);    
     }    
+    .paypal-btn {    
+      background-color: #0070ba;    
+      color: white;    
+      padding: 12px 24px;    
+      border-radius: 30px;    
+      font-weight: bold;    
+      text-decoration: none;    
+      margin-top: 10px;    
+      width: 100%;    
+      display: inline-block;    
+      text-align: center;    
+    }    
+    .paypal-btn:hover {    
+      background-color: #005a8a;    
+    }    
     .contact-button, .chat-button {    
       position: fixed;    
       bottom: 20px;    
@@ -192,23 +207,6 @@
       margin-top: 15px;    
       font-style: normal;    
       color: #555;    
-    }    
-    .paypal-container {    
-      margin-top: 20px;    
-      display: flex;    
-      justify-content: center;    
-      gap: 20px;    
-    }    
-    .paypal-btn {    
-      background-color: #0070ba;    
-      color: white;    
-      padding: 12px 24px;    
-      border-radius: 30px;    
-      font-weight: bold;    
-      text-decoration: none;    
-    }    
-    .paypal-btn:hover {    
-      background-color: #005a8a;    
     }    
   </style>    
   <script>    
@@ -282,11 +280,12 @@
           </select>    
           <input type="number" min="1" max="6" value="1" />    
           <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>    
+          <!-- PayPal Button -->
+          <a href="https://www.paypal.com" class="paypal-btn" target="_blank">Pay with PayPal</a>    
         </div>    
       </div>    
     </div>    
   </div>    
-  <!-- Testimonials Section -->    
   <div class="section" id="testimonials">    
     <h2>What Our Customers Say</h2>    
     <div class="testimonial-container">    
