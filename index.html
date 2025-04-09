@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en">
+ <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,12 +23,14 @@
       text-align: center;
       position: relative;
       box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      animation: fadeIn 1s ease;
     }
     .logo {
       font-family: 'Playfair Display', serif;
       font-size: 3em;
       font-weight: 700;
       color: #111;
+      animation: fadeInLogo 1s ease;
     }
     .tagline {
       font-size: 1.2em;
@@ -44,6 +46,7 @@
       border-radius: 25px;
       font-weight: 600;
       text-decoration: none;
+      animation: bounceCart 2s ease-in-out infinite;
     }
     nav {
       text-align: center;
@@ -57,12 +60,14 @@
       text-decoration: none;
       color: #333;
       font-weight: bold;
+      animation: slideIn 0.5s ease-in-out;
     }
     section {
       padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
       text-align: center;
+      animation: fadeIn 1.5s ease;
     }
     section h2 {
       font-size: 2em;
@@ -98,6 +103,7 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       display: flex;
       flex-direction: column;
+      animation: zoomIn 1s ease-in-out;
     }
     .product img {
       width: 100%;
@@ -152,6 +158,27 @@
         width: 90%;
       }
     }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes fadeInLogo {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateX(-50px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes bounceCart {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes zoomIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
   </style>
   <script>
     let cartCount = 0;
@@ -191,10 +218,10 @@
   </section>  <section id="factory">
     <h2>Zurich Factory</h2>
     <p>
-      Our next-generation fashion factory will soon launch in Zurich,
+      Our fashion factory in Zurich has recently started operations,
       showcasing precision, craftsmanship, and the future of luxury design.
     </p>
-    <a class="btn" href="#">Coming Soon</a>
+    <a class="btn" href="#">Learn More</a>
   </section>  <section id="products">
     <h2>Our Products</h2>
     <div class="product-container">
