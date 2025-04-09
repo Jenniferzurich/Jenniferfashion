@@ -1,261 +1,327 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jennifer - Luxury Women's Fashion</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fefefe;
-      color: #222;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      background: linear-gradient(120deg, #fff, #f4f4f4);
-      text-align: center;
-      padding: 50px 20px 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      position: relative;
-    }
-
-    .logo {
-      font-size: 3.2em;
-      font-weight: bold;
-      color: #000;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .tagline {
-      font-size: 1.2em;
-      color: #777;
-    }
-
-    .cart-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background-color: #000;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .nav {
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    .nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #000;
-      color: #fff;
-      padding: 12px 30px;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      margin: 10px 10px 0;
-      transition: all 0.3s ease-in-out;
-      transform: scale(1);
-    }
-
-    .btn:hover {
-      background-color: #444;
-      transform: scale(1.05);
-    }
-
-    .contact-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #000;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      z-index: 999;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease-in-out;
-      transform: scale(1);
-    }
-
-    .contact-button:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background-color: #f2f2f2;
-      padding: 30px;
-      font-size: 0.95em;
-      color: #555;
-      text-align: center;
-    }
-
-    .testimonial-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .testimonial {
-      background-color: #fff;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      padding: 20px 25px;
-      max-width: 320px;
-      font-style: italic;
-      color: #333;
-    }
-
-    .testimonial strong {
-      display: block;
-      margin-top: 15px;
-      font-style: normal;
-      color: #555;
-    }
-
-    .chat-button,
-    .paypal-button {
-      position: fixed;
-      bottom: 70px;
-      right: 20px;
-      background-color: #25d366;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      z-index: 999;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease-in-out;
-    }
-
-    .paypal-button {
-      bottom: 20px;
-      background-color: #0070ba;
-    }
-
-    .chat-button:hover,
-    .paypal-button:hover {
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="logo">Jennifer</div>
-    <div class="tagline">Luxury Women's Fashion</div>
-    <a href="#cart" class="cart-button">Cart (0)</a>
-  </header>
-
-  <nav class="nav">
-    <a href="#about">About</a>
-    <a href="#stores">Stores</a>
-    <a href="#factory">Factory</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-    <a href="#gallery">Gallery</a>
-  </nav>
-
-  <div class="section" id="about">
-    <h2>About Jennifer</h2>
-    <p>Founded by Daniel Soufi, Jennifer is a global brand using premium materials like organic silk, pure cotton, and high-end European fabrics. Jennifer competes with the world’s leading fashion houses. Shop from anywhere via Amazon or our official website.</p>
-    <a class="btn" href="#stores">View Stores</a>
-    <a class="btn" href="#factory">Factory Info</a>
-  </div>
-
-  <div class="section" id="stores">
-    <h2>Our Stores</h2>
-    <p>Visit our luxury boutiques at:</p>
-    <p><strong>Zurich:</strong> Unit 13, Hallway T9, Ground Floor, Letzipark, Zürich</p>
-    <p><strong>Dubai:</strong> Store 105, Souk Madinat Jumeirah, Dubai</p>
-    <p><strong>Seoul:</strong> A7, Ground Floor, Doota Mall, Dongdaemun, Seoul</p>
-  </div>
-
-  <div class="section" id="factory">
-    <h2>Jennifer Factory in Zürich</h2>
-    <p>Our newly operational next-generation fashion factory in Zurich is now live, showcasing precision, craftsmanship, and the future of luxury design.</p>
-    <p><strong>Address:</strong> Schaffhauserstrasse 458, 8057 Zürich, Switzerland</p>
-    <a class="btn" href="#">Discover More</a>
-  </div>
-
-  <div class="section" id="products">
-    <h2>Our Products</h2>
-    <div class="product-container">
-      <div class="product">
-        <img src="https://example.com/product1.jpg" alt="Cream Outfit">
-        <div class="product-details">
-          <h3>Cream Blouse and Trousers</h3>
-          <p>$140</p>
-          <select>
-            <option selected disabled>Select Size</option>
-            <option>Small</option>
-            <option>Medium</option>
-            <option>Large</option>
-            <option>X-Large</option>
-          </select>
-          <input type="number" min="1" max="6" value="1">
-          <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section" id="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial-container">
-      <div class="testimonial">
-        <p>"The quality is unmatched. I’ve never felt more elegant in an outfit!"</p>
-        <strong>- Sara M., Dubai</strong>
-      </div>
-      <div class="testimonial">
-        <p>"Jennifer’s fabric feels like luxury. The craftsmanship is amazing."</p>
-        <strong>- Clara H., Zurich</strong>
-      </div>
-      <div class="testimonial">
-        <p>"Fast delivery and stunning design. Highly recommend!"</p>
-        <strong>- Minji K., Seoul</strong>
-      </div>
-    </div>
-  </div>
-
-  <div class="section" id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="https://source.unsplash.com/featured/?fashion,1" alt="Gallery Image 1">
-      <img src="https://source.unsplash.com/featured/?luxury,2" alt="Gallery Image 2">
-      <img src="https://source.unsplash.com/featured/?fashion,3" alt="Gallery Image 3">
-    </div>
-  </div>
-
-  <div class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>Have any questions or inquiries? Reach out to us.</p>
-    <a href="mailto:support@example.com" class="btn">Email Us</a>
-  </div>
-
-  <a href="https://wa.me/1234567890" class="chat-button">Chat with Us</a>
-  <a href="https://www.paypal.com" class="paypal-button">Pay via PayPal</a>
-
-  <footer>
-    <p>&copy; 2025 Jennifer. All Rights Reserved.</p>
-    <p>Worldwide Shipping | 30-Day Return Policy</p>
-  </footer>
-</body>
+ <!DOCTYPE html>
+<html lang="en">    
+<head>    
+  <meta charset="UTF-8" />    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+  <title>Jennifer - Luxury Women's Fashion</title>    
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">    
+  <style>    
+    body {    
+      font-family: 'Open Sans', sans-serif;    
+      margin: 0;    
+      padding: 0;    
+      background-color: #fefefe;    
+      color: #222;    
+      scroll-behavior: smooth;    
+    }    
+    header {    
+      background: linear-gradient(120deg, #fff, #f4f4f4);    
+      text-align: center;    
+      padding: 50px 20px 20px;    
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);    
+      position: relative;    
+    }    
+    .logo {    
+      font-size: 3.2em;    
+      font-weight: bold;    
+      color: #000;    
+      font-family: 'Playfair Display', serif;    
+    }    
+    .tagline {    
+      font-size: 1.2em;    
+      color: #777;    
+    }    
+    .cart-button {    
+      position: absolute;    
+      top: 20px;    
+      right: 20px;    
+      background-color: #000;    
+      color: #fff;    
+      padding: 10px 20px;    
+      border-radius: 25px;    
+      font-weight: bold;    
+      text-decoration: none;    
+    }    
+    nav {    
+      text-align: center;    
+      margin: 20px 0;    
+    }    
+    nav a {    
+      margin: 0 15px;    
+      text-decoration: none;    
+      color: #333;    
+      font-weight: bold;    
+    }    
+    .section {    
+      padding: 60px 20px;    
+      max-width: 1200px;    
+      margin: 0 auto;    
+      text-align: center;    
+    }    
+    .section h2 {    
+      font-size: 2.2em;    
+      margin-bottom: 15px;    
+      font-family: 'Playfair Display', serif;    
+    }    
+    .section p {    
+      font-size: 1.1em;    
+      color: #444;    
+      max-width: 800px;    
+      margin: 0 auto 20px;    
+    }    
+    .btn {    
+      display: inline-block;    
+      background-color: #000;    
+      color: #fff;    
+      padding: 12px 30px;    
+      border-radius: 30px;    
+      font-weight: 600;    
+      text-decoration: none;    
+      margin: 10px 10px 0;    
+      transition: all 0.3s ease-in-out;    
+      transform: scale(1);    
+    }    
+    .btn:hover {    
+      background-color: #444;    
+      transform: scale(1.05);    
+    }    
+    .product-container {    
+      display: flex;    
+      justify-content: center;    
+      gap: 40px;    
+      flex-wrap: wrap;    
+      margin-top: 40px;    
+    }    
+    .product {    
+      background-color: #fff;    
+      border-radius: 16px;    
+      overflow: hidden;    
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);    
+      width: 300px;    
+      transition: transform 0.3s;    
+      display: flex;    
+      flex-direction: column;    
+      align-items: center;    
+    }    
+    .product:hover {    
+      transform: translateY(-10px);    
+    }    
+    .product img {    
+      width: 100%;    
+      display: block;    
+    }    
+    .product-details {    
+      padding: 20px;    
+      width: 100%;    
+    }    
+    .product h3 {    
+      font-size: 1.3em;    
+      margin: 10px 0;    
+    }    
+    .product p {    
+      color: #777;    
+      font-size: 1em;    
+    }    
+    .product select,    
+    .product input[type="number"] {    
+      width: 100%;    
+      padding: 8px;    
+      margin-top: 10px;    
+      border: 1px solid #ccc;    
+      border-radius: 8px;    
+    }    
+    .product .add-to-cart {    
+      margin-top: 15px;    
+      background-color: #000;    
+      color: #fff;    
+      border: none;    
+      padding: 10px;    
+      border-radius: 25px;    
+      width: 100%;    
+      font-weight: 600;    
+      cursor: pointer;    
+      transition: all 0.3s ease-in-out;    
+      transform: scale(1);    
+    }    
+    .product .add-to-cart:hover {    
+      background-color: #444;    
+      transform: scale(1.05);    
+    }    
+    .contact-button, .chat-button {    
+      position: fixed;    
+      bottom: 20px;    
+      background-color: #000;    
+      color: #fff;    
+      padding: 12px 24px;    
+      border-radius: 30px;    
+      font-weight: bold;    
+      text-decoration: none;    
+      z-index: 999;    
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);    
+      transition: all 0.3s ease-in-out;    
+      transform: scale(1);    
+    }    
+    .contact-button:hover, .chat-button:hover {    
+      transform: scale(1.05);    
+    }    
+    footer {    
+      background-color: #f2f2f2;    
+      padding: 30px;    
+      font-size: 0.95em;    
+      color: #555;    
+      text-align: center;    
+    }    
+    .testimonial-container {    
+      display: flex;    
+      flex-wrap: wrap;    
+      justify-content: center;    
+      gap: 30px;    
+      margin-top: 30px;    
+    }    
+    .testimonial {    
+      background-color: #fff;    
+      border-radius: 16px;    
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);    
+      padding: 20px 25px;    
+      max-width: 320px;    
+      font-style: italic;    
+      color: #333;    
+    }    
+    .testimonial strong {    
+      display: block;    
+      margin-top: 15px;    
+      font-style: normal;    
+      color: #555;    
+    }    
+    .paypal-container {    
+      margin-top: 20px;    
+      display: flex;    
+      justify-content: center;    
+      gap: 20px;    
+    }    
+    .paypal-btn {    
+      background-color: #0070ba;    
+      color: white;    
+      padding: 12px 24px;    
+      border-radius: 30px;    
+      font-weight: bold;    
+      text-decoration: none;    
+    }    
+    .paypal-btn:hover {    
+      background-color: #005a8a;    
+    }    
+  </style>    
+  <script>    
+    let cartCount = localStorage.getItem('cartCount') || 0;    
+    document.addEventListener("DOMContentLoaded", () => {    
+      document.getElementById('cart-count').innerText = '(' + cartCount + ')';    
+    });    
+    function addToCart() {    
+      cartCount++;    
+      localStorage.setItem('cartCount', cartCount);    
+      document.getElementById('cart-count').innerText = '(' + cartCount + ')';    
+    }    
+  </script>    
+</head>    
+<body>    
+  <header>    
+    <div class="logo">JR</div>    
+    <div class="tagline">Jennifer - Luxury Women's Fashion</div>    
+    <a href="#cart" class="cart-button">Cart <span id="cart-count">(0)</span></a>    
+  </header>    
+  <nav>    
+    <a href="#about">About</a>    
+    <a href="#stores">Stores</a>    
+    <a href="#factory">Factory</a>    
+    <a href="#products">Products</a>    
+    <a href="#contact">Contact</a>    
+    <a href="#gallery">Gallery</a>    
+  </nav>    
+  <div class="section" id="about">    
+    <h2>About Jennifer</h2>    
+    <p>    
+      Founded by Daniel Soufi, Jennifer is a global brand using premium materials like organic silk,    
+      pure cotton, and high-end European fabrics. Jennifer competes with the world’s leading fashion houses.    
+      Shop from anywhere via Amazon or our official website.    
+    </p>    
+    <p>    
+      We offer worldwide delivery and a 30-day return policy, ensuring the best customer experience.    
+    </p>    
+    <a class="btn" href="#stores">View Stores</a>    
+    <a class="btn" href="#factory">Factory Info</a>    
+  </div>    
+  <div class="section" id="stores">    
+    <h2>Our Stores</h2>    
+    <p>Visit our luxury boutiques at:</p>    
+    <p><strong>Zurich:</strong> Unit 13, Hallway T9, Ground Floor, Letzipark, Zürich</p>    
+    <p><strong>Dubai:</strong> Store 105, Souk Madinat Jumeirah, Dubai</p>    
+    <p><strong>Seoul:</strong> A7, Ground Floor, Doota Mall, Dongdaemun, Seoul</p>    
+  </div>    
+  <div class="section" id="factory">    
+    <h2>Jennifer Factory in Zürich</h2>    
+    <p>    
+      Our newly operational next-generation fashion factory in Zurich is now live, showcasing precision, craftsmanship, and the future of luxury design.    
+    </p>    
+    <p><strong>Address:</strong> Schaffhauserstrasse 458, 8057 Zürich, Switzerland</p>    
+    <a class="btn" href="#">Discover More</a>    
+  </div>    
+  <div class="section" id="products">    
+    <h2>Our Products</h2>    
+    <div class="product-container">    
+      <div class="product">    
+        <img src="https://github.com/Jenniferzurich/Jenniferfashion/raw/main/Screenshot_20250409_173603_Chrome.jpg" alt="Cream Outfit" />    
+        <div class="product-details">    
+          <h3>Cream Blouse and Trousers</h3>    
+          <p>$140</p>    
+          <select>    
+            <option selected disabled>Select Size</option>    
+            <option>Small</option>    
+            <option>Medium</option>    
+            <option>Large</option>    
+            <option>X-Large</option>    
+          </select>    
+          <input type="number" min="1" max="6" value="1" />    
+          <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>    
+        </div>    
+      </div>    
+    </div>    
+  </div>    
+  <!-- Testimonials Section -->    
+  <div class="section" id="testimonials">    
+    <h2>What Our Customers Say</h2>    
+    <div class="testimonial-container">    
+      <div class="testimonial">    
+        <p>"The quality is unmatched. I’ve never felt more elegant in an outfit!"</p>    
+        <strong>- Sara M., Dubai</strong>    
+      </div>    
+      <div class="testimonial">    
+        <p>"Jennifer’s fabric feels like luxury. The craftsmanship is amazing."</p>    
+        <strong>- Clara H., Zurich</strong>    
+      </div>    
+      <div class="testimonial">    
+        <p>"Fast delivery and stunning design. Highly recommend!"</p>    
+        <strong>- Minji K., Seoul</strong>    
+      </div>    
+    </div>    
+  </div>    
+  <div class="section" id="gallery">    
+    <h2>Gallery</h2>    
+    <div class="gallery">    
+      <img src="https://source.unsplash.com/featured/?fashion,1" alt="Gallery Image 1" />    
+      <img src="https://source.unsplash.com/featured/?luxury,2" alt="Gallery Image 2" />    
+      <img src="https://source.unsplash.com/featured/?designer,3" alt="Gallery Image 3" />    
+    </div>    
+  </div>    
+  <div class="section" id="contact">    
+    <h2>Contact & Customer Service</h2>    
+    <p>Email us at: support@jenniferfashion.com</p>    
+    <p>Phone: +41 43 321 86 98</p>    
+    <a href="mailto:support@jenniferfashion.com" class="contact-button">Email Us</a>    
+  </div>    
+  <a href="javascript:void(0);" class="chat-button" onclick="alert('Chat is currently unavailable')">Chat with Us</a>    
+  <a href="#contact" class="contact-button">Contact Us</a>    
+  <footer>    
+    &copy; 2025 JR | Jennifer Fashion. All rights reserved.    
+  </footer>    
+</body>    
 </html>
