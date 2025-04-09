@@ -185,14 +185,34 @@
       color: #555;
       text-align: center;
     }
+    .testimonial-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .testimonial {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 20px 25px;
+      max-width: 320px;
+      font-style: italic;
+      color: #333;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 15px;
+      font-style: normal;
+      color: #555;
+    }
   </style>
   <script>
     let cartCount = localStorage.getItem('cartCount') || 0;
-
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('cart-count').innerText = '(' + cartCount + ')';
     });
-
     function addToCart() {
       cartCount++;
       localStorage.setItem('cartCount', cartCount);
@@ -261,6 +281,26 @@
       </div>
     </div>
   </div>
+
+  <!-- Testimonials Section -->
+  <div class="section" id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial">
+        <p>"The quality is unmatched. I’ve never felt more elegant in an outfit!"</p>
+        <strong>- Sara M., Dubai</strong>
+      </div>
+      <div class="testimonial">
+        <p>"Jennifer’s fabric feels like luxury. The craftsmanship is amazing."</p>
+        <strong>- Clara H., Zurich</strong>
+      </div>
+      <div class="testimonial">
+        <p>"Fast delivery and stunning design. Highly recommend!"</p>
+        <strong>- Minji K., Seoul</strong>
+      </div>
+    </div>
+  </div>
+
   <div class="section" id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
