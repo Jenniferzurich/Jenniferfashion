@@ -1,6 +1,5 @@
  <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,27 +14,23 @@
       color: #222;
       scroll-behavior: smooth;
     }
-
     header {
       background: linear-gradient(120deg, #fff, #f4f4f4);
       text-align: center;
       padding: 50px 20px 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
       position: relative;
     }
-
     .logo {
       font-size: 3.2em;
       font-weight: bold;
       color: #000;
       font-family: 'Playfair Display', serif;
     }
-
     .tagline {
       font-size: 1.2em;
       color: #777;
     }
-
     .cart-button {
       position: absolute;
       top: 20px;
@@ -47,39 +42,33 @@
       font-weight: bold;
       text-decoration: none;
     }
-
     nav {
       text-align: center;
       margin: 20px 0;
     }
-
     nav a {
       margin: 0 15px;
       text-decoration: none;
       color: #333;
       font-weight: bold;
     }
-
     .section {
       padding: 60px 20px;
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
     }
-
     .section h2 {
       font-size: 2.2em;
       margin-bottom: 15px;
       font-family: 'Playfair Display', serif;
     }
-
     .section p {
       font-size: 1.1em;
       color: #444;
       max-width: 800px;
       margin: 0 auto 20px;
     }
-
     .btn {
       display: inline-block;
       background-color: #000;
@@ -91,11 +80,9 @@
       margin: 10px 10px 0;
       transition: all 0.3s ease;
     }
-
     .btn:hover {
       background-color: #444;
     }
-
     .product-container {
       display: flex;
       justify-content: center;
@@ -103,43 +90,36 @@
       flex-wrap: wrap;
       margin-top: 40px;
     }
-
     .product {
       background-color: #fff;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
       width: 300px;
       transition: transform 0.3s;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-
     .product:hover {
       transform: translateY(-10px);
     }
-
     .product img {
       width: 100%;
       display: block;
     }
-
     .product-details {
       padding: 20px;
       width: 100%;
     }
-
     .product h3 {
       font-size: 1.3em;
       margin: 10px 0;
     }
-
     .product p {
       color: #777;
       font-size: 1em;
     }
-
     .product select,
     .product input[type="number"] {
       width: 100%;
@@ -148,8 +128,8 @@
       border: 1px solid #ccc;
       border-radius: 8px;
     }
-
-    .product .add-to-cart {
+    .product .add-to-cart,
+    .product .paypal {
       margin-top: 15px;
       background-color: #000;
       color: #fff;
@@ -161,11 +141,10 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
-    .product .add-to-cart:hover {
+    .product .add-to-cart:hover,
+    .product .paypal:hover {
       background-color: #444;
     }
-
     footer {
       background-color: #f2f2f2;
       padding: 30px;
@@ -173,69 +152,18 @@
       color: #555;
       text-align: center;
     }
-
-    /* Chat icon fixed at bottom */
-    .chat-icon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #000;
-      color: #fff;
-      border-radius: 50%;
-      padding: 15px;
-      font-size: 1.5em;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-    }
-
-    .contact-section a,
-    .contact-section p {
-      margin: 5px 0;
-    }
-
-    .contact-section {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .contact-section a {
-      font-size: 1.1em;
-      color: #444;
-      text-decoration: none;
-    }
-
-    /* Section for Guarantee, Shipping, European Fabrics */
-    .guarantees {
-      background-color: #f9f9f9;
-      padding: 40px 20px;
-      display: flex;
-      justify-content: space-around;
-      text-align: center;
-    }
-
-    .guarantees div {
-      width: 30%;
-    }
-
-    .guarantees div i {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
   </style>
   <script>
     let cartCount = 0;
-
     function addToCart() {
       cartCount++;
-      document.getElementById('cart-count').innerText = `(${cartCount})`;
+      document.getElementById('cart-count').innerText = '(' + cartCount + ')';
+    }
+    function redirectToPaypal() {
+      window.location.href = "https://www.paypal.com";
     }
   </script>
 </head>
-
 <body>
   <header>
     <div class="logo">JR</div>
@@ -264,18 +192,19 @@
 
   <div class="section" id="stores">
     <h2>Our Stores</h2>
-    <p>Visit our luxury boutiques in:</p>
-    <a class="btn" href="#">Zurich - Letzipark</a>
-    <a class="btn" href="#">Dubai - Madinat Jumeirah</a>
-    <a class="btn" href="#">Seoul - Dongdaemun</a>
+    <p>Visit our luxury boutiques at:</p>
+    <p>No. 13, Corridor T9, Ground Floor, Letzipark, Zurich</p>
+    <p>No. 105, Souk Madinat Jumeirah, Dubai</p>
+    <p>No. A7, Ground Floor, Doota Mall, Dongdaemun, Seoul</p>
   </div>
 
   <div class="section" id="factory">
-    <h2>Jennifer Factory in Zürich</h2>
+    <h2>Jennifer Factory in Zurich</h2>
     <p>
-      Our state-of-the-art factory in Zürich has recently begun operations, showcasing precision, craftsmanship, and the future of luxury design.
+      Our next-generation fashion factory has recently begun operations in Zurich,
+      showcasing precision, craftsmanship, and the future of luxury design.
     </p>
-    <a class="btn" href="#">Learn More</a>
+    <p>Factory Address: Schaffhauserstrasse 458, 8057 Zürich, Switzerland</p>
   </div>
 
   <div class="section" id="products">
@@ -295,6 +224,7 @@
           </select>
           <input type="number" min="1" max="6" value="1" />
           <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+          <button class="paypal" onclick="redirectToPaypal()">Pay with PayPal</button>
         </div>
       </div>
     </div>
@@ -303,38 +233,12 @@
   <div class="section" id="contact">
     <h2>Contact & Customer Service</h2>
     <p>Email us at: support@jenniferfashion.com</p>
-    <p>Call us: +41433218698</p>
-  </div>
-
-  <div class="guarantees">
-    <div>
-      <i class="fa fa-truck"></i>
-      <h3>Worldwide Shipping</h3>
-    </div>
-    <div>
-      <i class="fa fa-fabric"></i>
-      <h3>European Fabrics</h3>
-    </div>
-    <div>
-      <i class="fa fa-sync"></i>
-      <h3>Money-back Guarantee</h3>
-    </div>
+    <p><strong>Call us:</strong> +41 43 321 86 98</p>
+    <a class="btn" href="tel:+41433218698">Call Now</a>
   </div>
 
   <footer>
     &copy; 2025 JR | Jennifer Fashion. All rights reserved.
   </footer>
-
-  <!-- Chat Icon -->
-  <div class="chat-icon">
-    <i class="fa fa-comment"></i>
-  </div>
-
-  <!-- Contact Section fixed at bottom left -->
-  <div class="contact-section">
-    <a href="tel:+41433218698">Contact Us</a>
-    <p>Call us: +41433218698</p>
-  </div>
 </body>
-
 </html>
