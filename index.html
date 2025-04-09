@@ -12,7 +12,6 @@
       background-color: #fefefe;
       color: #222;
       scroll-behavior: smooth;
-      overflow-x: hidden;
     }
     header {
       background: linear-gradient(120deg, #fff, #f4f4f4);
@@ -20,11 +19,6 @@
       padding: 50px 20px 20px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.05);
       position: relative;
-      animation: fadeInDown 1s ease-in-out;
-    }
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-30px);}
-      to {opacity: 1; transform: translateY(0);}
     }
     .logo {
       font-size: 3.2em;
@@ -56,32 +50,17 @@
       text-decoration: none;
       color: #333;
       font-weight: bold;
-      position: relative;
-    }
-    nav a::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: #000;
-      transition: width .3s;
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-    }
-    nav a:hover::after {
-      width: 100%;
     }
     .section {
       padding: 60px 20px;
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
-      animation: fadeInUp 1s ease;
+      animation: fadeIn 1s ease-in-out;
     }
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(40px);}
-      to {opacity: 1; transform: translateY(0);}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .section h2 {
       font-size: 2.2em;
@@ -107,7 +86,6 @@
     }
     .btn:hover {
       background-color: #444;
-      transform: scale(1.05);
     }
     .product-container {
       display: flex;
@@ -126,7 +104,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: fadeInUp 1.5s ease;
     }
     .product:hover {
       transform: translateY(-10px);
@@ -155,8 +132,7 @@
       border: 1px solid #ccc;
       border-radius: 8px;
     }
-    .product .add-to-cart,
-    .product .paypal {
+    .product .add-to-cart {
       margin-top: 15px;
       background-color: #000;
       color: #fff;
@@ -168,22 +144,43 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    .product .add-to-cart:hover,
-    .product .paypal:hover {
+    .product .add-to-cart:hover {
       background-color: #444;
     }
-    #floating-contact {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #000;
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      z-index: 999;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    .paypal {
+      margin-top: 10px;
+      width: 100%;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .gallery img {
+      max-width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .reviews {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .review {
+      background: #fafafa;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 15px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .review strong {
+      display: block;
+      margin-bottom: 8px;
     }
     footer {
       background-color: #f2f2f2;
@@ -192,28 +189,12 @@
       color: #555;
       text-align: center;
     }
-    @media (max-width: 768px) {
-      .product-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      .section {
-        padding: 40px 15px;
-      }
-      nav a {
-        margin: 0 8px;
-        display: inline-block;
-      }
-    }
   </style>
   <script>
     let cartCount = 0;
     function addToCart() {
       cartCount++;
       document.getElementById('cart-count').innerText = '(' + cartCount + ')';
-    }
-    function redirectToPaypal() {
-      window.location.href = "https://www.paypal.com";
     }
   </script>
 </head>
@@ -222,33 +203,43 @@
     <div class="logo">JR</div>
     <div class="tagline">Jennifer - Luxury Women's Fashion</div>
     <a href="#cart" class="cart-button">Cart <span id="cart-count">(0)</span></a>
-  </header>  <nav>
+  </header>
+  <nav>
     <a href="#about">About</a>
     <a href="#stores">Stores</a>
     <a href="#factory">Factory</a>
     <a href="#products">Products</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
-  </nav>  <div class="section" id="about">
+  </nav>
+  <div class="section" id="about">
     <h2>About Jennifer</h2>
     <p>
       Founded by Daniel Soufi, Jennifer is a global brand using premium materials like organic silk,
       pure cotton, and high-end European fabrics. Jennifer competes with the world’s leading fashion houses.
       Shop from anywhere via Amazon or our official website.
     </p>
-  </div>  <div class="section" id="stores">
+    <a class="btn" href="#stores">View Stores</a>
+    <a class="btn" href="#factory">Factory Info</a>
+  </div>
+  <div class="section" id="stores">
     <h2>Our Stores</h2>
     <p>Visit our luxury boutiques at:</p>
-    <p>Unit 13, Corridor T9, Ground Floor, Letzipark, Zurich, Switzerland</p>
-    <p>Unit 105, Souk Madinat Jumeirah, Dubai, UAE</p>
-    <p>Unit A7, Ground Floor, Doota Mall, Dongdaemun, Seoul, South Korea</p>
-  </div>  <div class="section" id="factory">
+    <p>13 T9 Hallway, Ground Floor, Letzipark, Zürich</p>
+    <p>105 Souk Madinat Jumeirah, Dubai</p>
+    <p>A7 Ground Floor, Doota Mall, Dongdaemun, Seoul</p>
+  </div>
+  <div class="section" id="factory">
     <h2>Jennifer Factory in Zurich</h2>
     <p>
-      Our next-generation fashion factory has recently begun operations in Zurich,
+      Our next-generation fashion factory has recently launched in Zurich,
       showcasing precision, craftsmanship, and the future of luxury design.
     </p>
-    <p>Factory Address: Schaffhauserstrasse 458, 8057 Zürich, Switzerland</p>
-  </div>  <div class="section" id="products">
+    <p>Schaffhauserstrasse 458, 8057 Zürich, Switzerland</p>
+    <a class="btn" href="#">Explore More</a>
+  </div>
+  <div class="section" id="products">
     <h2>Our Products</h2>
     <div class="product-container">
       <div class="product">
@@ -265,17 +256,43 @@
           </select>
           <input type="number" min="1" max="6" value="1" />
           <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
-          <button class="paypal" onclick="redirectToPaypal()">Pay with PayPal</button>
+          <div class="paypal">
+            <a href="https://www.paypal.com" class="btn" target="_blank">Pay with PayPal</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>  <div class="section" id="contact">
+  </div>
+  <div class="section" id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://source.unsplash.com/300x400/?fashion,woman" alt="Gallery Image 1">
+      <img src="https://source.unsplash.com/300x400/?elegant,clothes" alt="Gallery Image 2">
+      <img src="https://source.unsplash.com/300x400/?luxury,fashion" alt="Gallery Image 3">
+    </div>
+  </div>
+  <div class="section" id="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="reviews">
+      <div class="review">
+        <strong>Emily R. from London</strong>
+        <p>The quality is absolutely stunning. I feel like a queen in Jennifer's outfits!</p>
+      </div>
+      <div class="review">
+        <strong>Yuki K. from Tokyo</strong>
+        <p>I love how soft and elegant everything feels. Truly luxury wear!</p>
+      </div>
+      <div class="review">
+        <strong>Sophia M. from New York</strong>
+        <p>Received my blouse in perfect condition. The fit was amazing!</p>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="contact">
     <h2>Contact & Customer Service</h2>
     <p>Email us at: support@jenniferfashion.com</p>
-    <p><strong>Call us:</strong> +41 43 321 86 98</p>
-    <a class="btn" href="tel:+41433218698">Call Now</a>
-  </div><a id="floating-contact" href="tel:+41433218698">Call Us</a>
-
+    <p>Call us: +41 43 321 8698</p>
+  </div>
   <footer>
     &copy; 2025 JR | Jennifer Fashion. All rights reserved.
   </footer>
