@@ -1,5 +1,4 @@
- <!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +12,7 @@
       background-color: #fefefe;
       color: #222;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
     header {
       background: linear-gradient(120deg, #fff, #f4f4f4);
@@ -20,6 +20,11 @@
       padding: 50px 20px 20px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.05);
       position: relative;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
     }
     .logo {
       font-size: 3.2em;
@@ -51,12 +56,32 @@
       text-decoration: none;
       color: #333;
       font-weight: bold;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #000;
+      transition: width .3s;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+    }
+    nav a:hover::after {
+      width: 100%;
     }
     .section {
       padding: 60px 20px;
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
+      animation: fadeInUp 1s ease;
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
     }
     .section h2 {
       font-size: 2.2em;
@@ -82,6 +107,7 @@
     }
     .btn:hover {
       background-color: #444;
+      transform: scale(1.05);
     }
     .product-container {
       display: flex;
@@ -100,6 +126,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      animation: fadeInUp 1.5s ease;
     }
     .product:hover {
       transform: translateY(-10px);
@@ -145,12 +172,38 @@
     .product .paypal:hover {
       background-color: #444;
     }
+    #floating-contact {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #000;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      z-index: 999;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
     footer {
       background-color: #f2f2f2;
       padding: 30px;
       font-size: 0.95em;
       color: #555;
       text-align: center;
+    }
+    @media (max-width: 768px) {
+      .product-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .section {
+        padding: 40px 15px;
+      }
+      nav a {
+        margin: 0 8px;
+        display: inline-block;
+      }
     }
   </style>
   <script>
@@ -169,45 +222,33 @@
     <div class="logo">JR</div>
     <div class="tagline">Jennifer - Luxury Women's Fashion</div>
     <a href="#cart" class="cart-button">Cart <span id="cart-count">(0)</span></a>
-  </header>
-
-  <nav>
+  </header>  <nav>
     <a href="#about">About</a>
     <a href="#stores">Stores</a>
     <a href="#factory">Factory</a>
     <a href="#products">Products</a>
     <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="section" id="about">
+  </nav>  <div class="section" id="about">
     <h2>About Jennifer</h2>
     <p>
       Founded by Daniel Soufi, Jennifer is a global brand using premium materials like organic silk,
       pure cotton, and high-end European fabrics. Jennifer competes with the world’s leading fashion houses.
       Shop from anywhere via Amazon or our official website.
     </p>
-    <a class="btn" href="#stores">View Stores</a>
-    <a class="btn" href="#factory">Factory Info</a>
-  </div>
-
-  <div class="section" id="stores">
+  </div>  <div class="section" id="stores">
     <h2>Our Stores</h2>
     <p>Visit our luxury boutiques at:</p>
-    <p>No. 13, Corridor T9, Ground Floor, Letzipark, Zurich</p>
-    <p>No. 105, Souk Madinat Jumeirah, Dubai</p>
-    <p>No. A7, Ground Floor, Doota Mall, Dongdaemun, Seoul</p>
-  </div>
-
-  <div class="section" id="factory">
+    <p>Unit 13, Corridor T9, Ground Floor, Letzipark, Zurich, Switzerland</p>
+    <p>Unit 105, Souk Madinat Jumeirah, Dubai, UAE</p>
+    <p>Unit A7, Ground Floor, Doota Mall, Dongdaemun, Seoul, South Korea</p>
+  </div>  <div class="section" id="factory">
     <h2>Jennifer Factory in Zurich</h2>
     <p>
       Our next-generation fashion factory has recently begun operations in Zurich,
       showcasing precision, craftsmanship, and the future of luxury design.
     </p>
     <p>Factory Address: Schaffhauserstrasse 458, 8057 Zürich, Switzerland</p>
-  </div>
-
-  <div class="section" id="products">
+  </div>  <div class="section" id="products">
     <h2>Our Products</h2>
     <div class="product-container">
       <div class="product">
@@ -228,14 +269,12 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="section" id="contact">
+  </div>  <div class="section" id="contact">
     <h2>Contact & Customer Service</h2>
     <p>Email us at: support@jenniferfashion.com</p>
     <p><strong>Call us:</strong> +41 43 321 86 98</p>
     <a class="btn" href="tel:+41433218698">Call Now</a>
-  </div>
+  </div><a id="floating-contact" href="tel:+41433218698">Call Us</a>
 
   <footer>
     &copy; 2025 JR | Jennifer Fashion. All rights reserved.
