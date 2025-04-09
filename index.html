@@ -10,39 +10,50 @@
       font-family: 'Open Sans', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fafafa;
+      background-color: #fdfdfd;
       color: #333;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
-      background-color: #fff;
-      padding: 20px 0;
+      background: linear-gradient(to right, #fff, #f7f7f7);
+      padding: 40px 0 20px;
       text-align: center;
-      border-bottom: 1px solid #e0e0e0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
 
     .logo {
-      font-size: 2em;
-      font-weight: 600;
-      color: #333;
+      font-size: 3em;
+      font-weight: 700;
+      color: #222;
+      letter-spacing: 2px;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 2em;
-      color: #555;
+    .tagline {
+      font-size: 1.1em;
+      color: #888;
+      margin-top: 5px;
+      animation: slideDown 1s ease-in-out;
     }
 
     .section {
       padding: 60px 20px;
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.3s;
     }
 
     .section h2 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
+      font-size: 2em;
+      margin-bottom: 15px;
       color: #333;
       text-align: center;
     }
@@ -50,129 +61,150 @@
     .section p {
       font-size: 1.1em;
       text-align: center;
-      color: #666;
+      color: #555;
       max-width: 800px;
       margin: 0 auto;
     }
 
     .btn {
       display: inline-block;
-      background-color: #333;
+      background-color: #222;
       color: #fff;
       padding: 12px 30px;
-      text-decoration: none;
-      border-radius: 5px;
+      border-radius: 30px;
       font-weight: 600;
-      margin-top: 20px;
-      text-align: center;
-      transition: background-color 0.3s ease;
+      margin-top: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 
     .btn:hover {
-      background-color: #555;
+      background-color: #444;
+      transform: scale(1.05);
+    }
+
+    .hidden-section {
+      display: none;
+      text-align: center;
+      margin-top: 30px;
+      animation: fadeIn 0.8s ease forwards;
     }
 
     .product-container {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 20px;
       flex-wrap: wrap;
       margin-top: 30px;
     }
 
     .product {
-      width: calc(33.333% - 20px);
+      width: 280px;
       background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .product:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
 
     .product img {
       width: 100%;
-      height: auto;
+      display: block;
     }
 
     .product-details {
-      padding: 15px;
+      padding: 20px;
       text-align: center;
     }
 
     .product h3 {
       font-size: 1.2em;
-      margin: 15px 0;
-      color: #444;
+      color: #333;
+      margin: 10px 0;
     }
 
     .product p {
-      font-size: 1.1em;
-      color: #888;
+      color: #777;
+      font-size: 1em;
     }
 
     footer {
-      background-color: #fff;
-      padding: 20px;
+      background-color: #f2f2f2;
       text-align: center;
-      border-top: 1px solid #e0e0e0;
+      padding: 30px 20px;
       font-size: 0.9em;
-      color: #888;
+      color: #777;
+      margin-top: 60px;
     }
 
-    /* Responsiveness */
-    @media (max-width: 768px) {
-      .product {
-        width: calc(50% - 20px);
-      }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
     }
 
-    @media (max-width: 480px) {
-      .product {
-        width: 100%;
-      }
+    ul li {
+      margin: 10px 0;
+      font-size: 1.05em;
+      color: #444;
     }
 
-    /* Hidden sections for dynamic display */
-    .hidden-section {
-      display: none;
-      text-align: center;
-      margin-top: 40px;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
+
   <script>
-    // Function to toggle the visibility of sections
     function toggleSection(sectionId) {
       const section = document.getElementById(sectionId);
-      section.style.display = (section.style.display === 'block') ? 'none' : 'block';
+      section.style.display = section.style.display === 'block' ? 'none' : 'block';
     }
   </script>
 </head>
 <body>
+
   <header>
     <div class="logo">JR</div>
-    <h1>Women's Fashion</h1>
+    <div class="tagline">Jennifer - Women's Fashion</div>
   </header>
 
   <div class="section">
-    <h2>About JR</h2>
-    <p>Discover our vision, and learn more about our brand's story and values.</p>
-    <a href="javascript:void(0)" class="btn" onclick="toggleSection('about-jr')">Read More</a>
-    <div id="about-jr" class="hidden-section">
-      <p>Founded by Daniel Soufi, with over 10 years of expertise in women's fashion. JR blends premium materials and contemporary design to create exceptional pieces. A new factory in Zurich is coming soon!</p>
+    <h2>About Jennifer</h2>
+    <p>Meet the story behind the brand.</p>
+    <a href="javascript:void(0)" class="btn" onclick="toggleSection('about')">Learn More</a>
+    <div id="about" class="hidden-section">
+      <p>
+        Jennifer is led by Daniel Soufi, with over 10 years of expertise in women's fashion.  
+        We're proud to combine premium materials with elegant design.  
+        <strong>Now available on Amazon worldwide.</strong>  
+        A brand new factory is coming soon in Zurich!
+      </p>
     </div>
   </div>
 
   <div class="section">
-    <h2>Our Stores</h2>
-    <p>Explore our global locations:</p>
-    <a href="javascript:void(0)" class="btn" onclick="toggleSection('stores')">Find Stores</a>
+    <h2>Store Locations</h2>
+    <p>Discover Jennifer stores around the world.</p>
+    <a href="javascript:void(0)" class="btn" onclick="toggleSection('stores')">View Stores</a>
     <div id="stores" class="hidden-section">
-      <ul style="text-align: center;">
+      <ul>
         <li>Zurich - Letzipark</li>
         <li>Dubai - Madinat Jumeirah</li>
         <li>Seoul - Dongdaemun</li>
@@ -181,7 +213,7 @@
   </div>
 
   <div class="section">
-    <h2>Our Products</h2>
+    <h2>Featured Products</h2>
     <div class="product-container">
       <div class="product">
         <img src="https://github.com/Jenniferzurich/Jenniferfashion/raw/main/Screenshot_20250409_173603_Chrome.jpg" alt="Cream Blouse and Trousers" />
@@ -191,24 +223,18 @@
         </div>
       </div>
       <div class="product">
-        <img src="https://example.com/product2.jpg" alt="Black Evening Dress" />
+        <img src="https://example.com/black-dress.jpg" alt="Black Elegant Dress" />
         <div class="product-details">
-          <h3>Black Evening Dress</h3>
-          <p>$200</p>
-        </div>
-      </div>
-      <div class="product">
-        <img src="https://example.com/product3.jpg" alt="Summer Dress" />
-        <div class="product-details">
-          <h3>Summer Dress</h3>
-          <p>$120</p>
+          <h3>Black Elegant Dress</h3>
+          <p>$190</p>
         </div>
       </div>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 JR Fashion. All rights reserved.
+    &copy; 2025 JR | Jennifer Fashion. All rights reserved.
   </footer>
+
 </body>
-</html>
+</html> 
