@@ -128,8 +128,7 @@
       border: 1px solid #ccc;
       border-radius: 8px;
     }
-    .product .add-to-cart,
-    .product .paypal {
+    .product .add-to-cart {
       margin-top: 15px;
       background-color: #000;
       color: #fff;
@@ -141,9 +140,34 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    .product .add-to-cart:hover,
-    .product .paypal:hover {
+    .product .add-to-cart:hover {
       background-color: #444;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .gallery img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .contact-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #000;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      z-index: 999;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
     footer {
       background-color: #f2f2f2;
@@ -159,9 +183,6 @@
       cartCount++;
       document.getElementById('cart-count').innerText = '(' + cartCount + ')';
     }
-    function redirectToPaypal() {
-      window.location.href = "https://www.paypal.com";
-    }
   </script>
 </head>
 <body>
@@ -170,15 +191,14 @@
     <div class="tagline">Jennifer - Luxury Women's Fashion</div>
     <a href="#cart" class="cart-button">Cart <span id="cart-count">(0)</span></a>
   </header>
-
   <nav>
     <a href="#about">About</a>
     <a href="#stores">Stores</a>
     <a href="#factory">Factory</a>
     <a href="#products">Products</a>
     <a href="#contact">Contact</a>
+    <a href="#gallery">Gallery</a>
   </nav>
-
   <div class="section" id="about">
     <h2>About Jennifer</h2>
     <p>
@@ -189,24 +209,22 @@
     <a class="btn" href="#stores">View Stores</a>
     <a class="btn" href="#factory">Factory Info</a>
   </div>
-
   <div class="section" id="stores">
     <h2>Our Stores</h2>
     <p>Visit our luxury boutiques at:</p>
-    <p>No. 13, Corridor T9, Ground Floor, Letzipark, Zurich</p>
-    <p>No. 105, Souk Madinat Jumeirah, Dubai</p>
-    <p>No. A7, Ground Floor, Doota Mall, Dongdaemun, Seoul</p>
+    <p><strong>Zurich:</strong> Unit 13, Hallway T9, Ground Floor, Letzipark, Zürich</p>
+    <p><strong>Dubai:</strong> Store 105, Souk Madinat Jumeirah, Dubai</p>
+    <p><strong>Seoul:</strong> A7, Ground Floor, Doota Mall, Dongdaemun, Seoul</p>
   </div>
-
   <div class="section" id="factory">
-    <h2>Jennifer Factory in Zurich</h2>
+    <h2>Jennifer Factory in Zürich</h2>
     <p>
-      Our next-generation fashion factory has recently begun operations in Zurich,
+      Our newly operational next-generation fashion factory in Zurich is now live,
       showcasing precision, craftsmanship, and the future of luxury design.
     </p>
-    <p>Factory Address: Schaffhauserstrasse 458, 8057 Zürich, Switzerland</p>
+    <p><strong>Address:</strong> Schaffhauserstrasse 458, 8057 Zürich, Switzerland</p>
+    <a class="btn" href="#">Discover More</a>
   </div>
-
   <div class="section" id="products">
     <h2>Our Products</h2>
     <div class="product-container">
@@ -224,19 +242,24 @@
           </select>
           <input type="number" min="1" max="6" value="1" />
           <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
-          <button class="paypal" onclick="redirectToPaypal()">Pay with PayPal</button>
         </div>
       </div>
     </div>
   </div>
-
+  <div class="section" id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://source.unsplash.com/featured/?fashion,1" alt="Gallery Image 1" />
+      <img src="https://source.unsplash.com/featured/?luxury,2" alt="Gallery Image 2" />
+      <img src="https://source.unsplash.com/featured/?designer,3" alt="Gallery Image 3" />
+    </div>
+  </div>
   <div class="section" id="contact">
     <h2>Contact & Customer Service</h2>
     <p>Email us at: support@jenniferfashion.com</p>
-    <p><strong>Call us:</strong> +41 43 321 86 98</p>
-    <a class="btn" href="tel:+41433218698">Call Now</a>
+    <p>Phone: +41 43 321 86 98</p>
   </div>
-
+  <a href="#contact" class="contact-button">Contact Us</a>
   <footer>
     &copy; 2025 JR | Jennifer Fashion. All rights reserved.
   </footer>
