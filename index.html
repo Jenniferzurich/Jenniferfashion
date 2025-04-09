@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -23,7 +23,7 @@
     }
 
     .logo {
-      font-size: 1.8em;
+      font-size: 2em;
       font-weight: 600;
       color: #333;
     }
@@ -53,6 +53,23 @@
       color: #666;
       max-width: 800px;
       margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      margin-top: 20px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #555;
     }
 
     .product-container {
@@ -119,36 +136,57 @@
         width: 100%;
       }
     }
+
+    /* Hidden sections for dynamic display */
+    .hidden-section {
+      display: none;
+      text-align: center;
+      margin-top: 40px;
+    }
   </style>
+  <script>
+    // Function to toggle the visibility of sections
+    function toggleSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.style.display = (section.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
   <header>
-    <div class="logo">Jennifer</div>
+    <div class="logo">JR</div>
     <h1>Women's Fashion</h1>
   </header>
 
   <div class="section">
-    <h2>About Jennifer</h2>
-    <p>Founded by Daniel Soufi, with over 10 years of expertise in women's fashion. Jennifer blends premium materials and contemporary design to create exceptional pieces. A new factory in Zurich is coming soon!</p>
+    <h2>About JR</h2>
+    <p>Discover our vision, and learn more about our brand's story and values.</p>
+    <a href="javascript:void(0)" class="btn" onclick="toggleSection('about-jr')">Read More</a>
+    <div id="about-jr" class="hidden-section">
+      <p>Founded by Daniel Soufi, with over 10 years of expertise in women's fashion. JR blends premium materials and contemporary design to create exceptional pieces. A new factory in Zurich is coming soon!</p>
+    </div>
   </div>
 
   <div class="section">
-    <h2>Stores</h2>
-    <p>Find us in these prestigious locations:</p>
-    <ul style="text-align: center;">
-      <li>Zurich - Letzipark</li>
-      <li>Dubai - Madinat Jumeirah</li>
-      <li>Seoul - Dongdaemun</li>
-    </ul>
+    <h2>Our Stores</h2>
+    <p>Explore our global locations:</p>
+    <a href="javascript:void(0)" class="btn" onclick="toggleSection('stores')">Find Stores</a>
+    <div id="stores" class="hidden-section">
+      <ul style="text-align: center;">
+        <li>Zurich - Letzipark</li>
+        <li>Dubai - Madinat Jumeirah</li>
+        <li>Seoul - Dongdaemun</li>
+      </ul>
+    </div>
   </div>
 
   <div class="section">
     <h2>Our Products</h2>
     <div class="product-container">
       <div class="product">
-        <img src="https://github.com/Jenniferzurich/Jenniferfashion/raw/main/Screenshot_20250409_173603_Chrome.jpg" alt="Red Silk Dress" />
+        <img src="https://github.com/Jenniferzurich/Jenniferfashion/raw/main/Screenshot_20250409_173603_Chrome.jpg" alt="Cream Blouse and Trousers" />
         <div class="product-details">
-          <h3>Red Silk Dress</h3>
+          <h3>Cream Blouse and Trousers</h3>
           <p>$140</p>
         </div>
       </div>
@@ -170,7 +208,7 @@
   </div>
 
   <footer>
-    &copy; 2025 Jennifer Fashion. All rights reserved.
+    &copy; 2025 JR Fashion. All rights reserved.
   </footer>
 </body>
 </html>
