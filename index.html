@@ -309,8 +309,14 @@
       const size = productElement.querySelector('select').value;
       const quantity = parseInt(productElement.querySelector('input[type="number"]').value);
 
+      // بررسی اندازه و تعداد
       if (!size || size === 'Select Size') {
-        alert('Please select a size.');
+        alert('Please select a size for the product.');
+        return;
+      }
+
+      if (!quantity || quantity < 1) {
+        alert('Please select a valid quantity (1 or more).');
         return;
       }
 
