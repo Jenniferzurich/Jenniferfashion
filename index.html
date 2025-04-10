@@ -205,19 +205,6 @@
       text-align: center;
     }
   </style>
-  <script>
-    let cartCount = localStorage.getItem('cartCount') || 0;
-
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById('cart-count').innerText = '(' + cartCount + ')';
-    });
-
-    function addToCart() {
-      cartCount++;
-      localStorage.setItem('cartCount', cartCount);
-      document.getElementById('cart-count').innerText = '(' + cartCount + ')';
-    }
-  </script>
 </head>
 <body>
   <header>
@@ -275,7 +262,7 @@
             <option>X-Large</option>
           </select>
           <input type="number" min="1" max="6" value="1" />
-          <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+          <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
           <div class="paypal-button">
             <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YOUR_BUTTON_ID" target="_blank">Buy with PayPal</a>
           </div>
@@ -284,7 +271,6 @@
     </div>
   </div>
 
-  <!-- Customer Reviews Section -->
   <div class="section" id="reviews">
     <h2>Customer Reviews</h2>
     <div style="max-width: 800px; margin: 0 auto; text-align: left;">
@@ -312,5 +298,71 @@
   <footer>
     &copy; 2025 JR | Jennifer Fashion. All rights reserved.
   </footer>
+
+  <!-- سبد خرید پیشرفته -->
+  <script>
+    function addToCart(button) {
+      const productElement = button.closest('.product');
+      const name = productElement.querySelector('h3').innerText;
+      const priceText = productElement.querySelector('p').innerText;
+      const price = parseFloat(priceText.replace('$', ''));
+      const size = productElement.querySelector('select').value;
+      const quantity = parseInt(productElement.querySelector('input[type="number"]').value);
+
+      if (!size || size === 'Select Size') {
+        alert('Please select a size.');
+        return;
+      }
+
+      const item = { name, price, size, quantity };
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      cartItems.push(item);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+      let cartCount = parseInt(localStorage.getItem('cartCount') || '0') + 1;
+      localStorage.setItem('cartCount', cartCount);
+      document.getElementById('cart-count').innerText = '(' + cartCount + ')';
+    }
+
+    function displayCartItems() {
+      const cartSection = document.getElementById('cart');
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      cartSection.innerHTML = '<h2>Your Cart</h2>';
+
+      if (cartItems.length === 0) {
+        cartSection.innerHTML += '<p>Your cart is empty.</p>';
+        return;
+      }
+
+      let total = 0;
+      cartItems.forEach((item) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        cartSection.innerHTML += `
+          <div style="border-bottom: 1px solid #ccc; padding: 10px 0;">
+            <strong>${item.name}</strong><br>
+            Size: ${item.size} | Quantity: ${item.quantity} | Price: $${item.price} | Total: $${itemTotal.toFixed(2)}
+          </div>
+        `;
+      });
+
+      cartSection.innerHTML += `<h3>Total: $${total.toFixed(2)}</h3>`;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const cartCount = localStorage.getItem('cartCount') || 0;
+      document.getElementById('cart-count').innerText = '(' + cartCount + ')';
+
+      document.querySelector('.cart-button').addEventListener('click', (e) => {
+        e.preventDefault();
+        displayCartItems();
+        document.getElementById('cart').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+  <div class="section" id="cart" style="display: block; margin-top: 40px;">
+    <!-- Cart items will be shown here -->
+  </div>
 </body>
 </html>
