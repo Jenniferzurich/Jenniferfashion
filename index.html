@@ -6,6 +6,54 @@
   <title>Jennifer - Luxury Women's Fashion</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+   .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #222;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+   .logo:hover {
+      color: #ff5733;
+      transform: scale(1.1);
+    }
+
+  .tagline {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #777;
+      text-align: center;
+      margin-top: 10px;
+      letter-spacing: 1px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+  .tagline:hover {
+      opacity: 1;
+    }
+
+  .cart-button {
+      color: #fff;
+      background-color: #333;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+ .cart-button:hover {
+      background-color: #444;
+      transform: scale(1.05);
+    }
+
+  </style>
+</head>
     body {
       font-family: sans-serif;
       margin: 0;
@@ -173,12 +221,11 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">JR</div>
-    <div class="tagline">Jennifer - Luxury Women's Fashion</div>
-    <a href="#cart" class="cart-button">Cart <span id="cart-count">(0)</span></a>
-  </header>
-
+<header>
+  <div class="logo">JR</div>
+  <div class="tagline">Jennifer - Luxury Women's Fashion</div>
+  <a href="#cart" class="cart-button">Cart <span id="cart-count">(0)</span></a>
+</header>
   <!-- Login Form Section -->
   <div class="section" id="login">
     <div class="login-form">
