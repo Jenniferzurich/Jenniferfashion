@@ -1,231 +1,374 @@
- <!DOCTYPE html><html lang="en">
+ <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jennifer - Luxury Women's Fashion</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    /* Global Styles */
-    body {
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fafafa;
-      color: #222;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: linear-gradient(120deg, #fff, #f4f4f4);
-      text-align: center;
-      padding: 60px 20px 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      position: relative;
-    }
-    .logo {
-      font-size: 3.5em;
-      font-weight: bold;
-      color: #000;
-      font-family: 'Playfair Display', serif;
-      letter-spacing: 2px;
-    }
-    .tagline {
-      font-size: 1.3em;
-      color: #666;
-      margin-top: 10px;
-    }
-    .cart-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background-color: #000;
-      color: #fff;
-      padding: 10px 25px;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    nav {
-      background-color: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      padding: 15px 0;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 18px;
-      text-decoration: none;
-      color: #444;
-      font-weight: bold;
-      font-size: 1.05em;
-    }
-    nav a:hover {
-      color: #000;
-    }
-    .section {
-      padding: 80px 20px;
-      max-width: 1300px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 2.5em;
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 20px;
-    }
-    .section p {
-      font-size: 1.1em;
-      color: #555;
-      max-width: 900px;
-      margin: 0 auto 25px;
-    }
-    .btn {
-      display: inline-block;
-      background-color: #000;
-      color: #fff;
-      padding: 14px 35px;
-      border-radius: 35px;
-      font-weight: 600;
-      text-decoration: none;
-      margin: 12px 12px 0;
-      transition: all 0.3s ease-in-out;
-      transform: scale(1);
-    }
-    .btn:hover {
-      background-color: #444;
-      transform: scale(1.05);
-    }
-    .product-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 50px;
-      margin-top: 50px;
-    }
-    .product {
-      background-color: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-      width: 320px;
-      transition: transform 0.3s;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .product:hover {
-      transform: translateY(-10px);
-    }
-    .product img {
-      width: 100%;
-      display: block;
-    }
-    .product-details {
-      padding: 20px;
-      width: 100%;
-    }
-    .product h3 {
-      font-size: 1.4em;
-      margin: 12px 0;
-    }
-    .product p {
-      color: #777;
-      font-size: 1em;
-    }
-    .product select,
-    .product input[type="number"] {
-      width: 100%;
-      padding: 10px;
-      margin-top: 12px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-    }
-    .product .add-to-cart {
-      margin-top: 20px;
-      background-color: #000;
-      color: #fff;
-      border: none;
-      padding: 12px;
-      border-radius: 30px;
-      width: 100%;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      transform: scale(1);
-    }
-    .product .add-to-cart:hover {
-      background-color: #444;
-      transform: scale(1.05);
-    }
-    .gallery {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-      margin-top: 40px;
-    }
-    .gallery img {
-      width: 260px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    footer {
-      background-color: #f2f2f2;
-      padding: 40px 20px;
-      font-size: 1em;
-      color: #555;
-      text-align: center;
-      line-height: 1.6;
-    }
-    .contact-section p {
-      font-size: 1.1em;
-      margin: 10px 0;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jennifer - Luxury Women's Fashion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fefefe;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(120deg, #fff, #f4f4f4);
+      text-align: center;
+      padding: 50px 20px 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    .logo {
+      font-size: 3.2em;
+      font-weight: bold;
+      color: #000;
+      font-family: 'Playfair Display', serif;
+    }
+    .tagline {
+      font-size: 1.2em;
+      color: #777;
+    }
+    .cart-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2.2em;
+      margin-bottom: 15px;
+      font-family: 'Playfair Display', serif;
+    }
+    .section p {
+      font-size: 1.1em;
+      color: #444;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #000;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 10px 10px 0;
+      transition: all 0.3s ease-in-out;
+      transform: scale(1);
+    }
+    .btn:hover {
+      background-color: #444;
+      transform: scale(1.05);
+    }
+    .product-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .product {
+      background-color: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      width: 300px;
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .product:hover {
+      transform: translateY(-10px);
+    }
+    .product img {
+      width: 100%;
+      display: block;
+    }
+    .product-details {
+      padding: 20px;
+      width: 100%;
+    }
+    .product h3 {
+      font-size: 1.3em;
+      margin: 10px 0;
+    }
+    .product p {
+      color: #777;
+      font-size: 1em;
+    }
+    .product select,
+    .product input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .product .add-to-cart {
+      margin-top: 15px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 25px;
+      width: 100%;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      transform: scale(1);
+    }
+    .product .add-to-cart:hover {
+      background-color: #444;
+      transform: scale(1.05);
+    }
+    .paypal-button {
+      margin-top: 10px;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+    .paypal-button a {
+      display: inline-block;
+      background-color: #0070ba;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+    }
+    .paypal-button a:hover {
+      background-color: #005c9c;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .gallery img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .contact-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #000;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      z-index: 999;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease-in-out;
+      transform: scale(1);
+    }
+    .contact-button:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #f2f2f2;
+      padding: 30px;
+      font-size: 0.95em;
+      color: #555;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="logo">JR</div>
-    <div class="tagline">Jennifer - Luxury Women's Fashion</div>
-    <a href="#cart" class="cart-button">Cart <span id="cart-count">(0)</span></a>
-  </header>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#stores">Stores</a>
-    <a href="#factory">Factory</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-    <a href="#gallery">Gallery</a>
-  </nav>  <div class="section" id="about">
-    <h2>About Jennifer</h2>
-    <p>
-      Founded by Daniel Soufi, Jennifer is a global brand rooted in the rich traditions of European luxury.
-      Using only the finest materials including organic silk, pure cotton, and top-tier European fabrics,
-      Jennifer competes with the world’s most prestigious fashion houses.
-      Our products are designed to offer elegance, sophistication, and timeless style.
-    </p>
-    <a class="btn" href="#stores">View Our Stores</a>
-    <a class="btn" href="#factory">Visit Our Factory</a>
-  </div>  <div class="section" id="stores">
-    <h2>Our Stores</h2>
-    <p>Explore our luxury boutiques at prime international locations:</p>
-    <p><strong>Zurich:</strong> Unit 13, Hallway T9, Ground Floor, Letzipark, Zürich</p>
-    <p><strong>Dubai:</strong> Store 105, Souk Madinat Jumeirah, Dubai</p>
-    <p><strong>Seoul:</strong> A7, Ground Floor, Doota Mall, Dongdaemun, Seoul</p>
-  </div>  <div class="section" id="factory">
-    <h2>Our Factory</h2>
-    <p>
-      Our high-tech fashion factory is proudly located in Europe, operating from Zürich, Switzerland.
-      It is equipped with cutting-edge technology and staffed by world-class artisans,
-      ensuring each piece meets our exacting standards.
-    </p>
-    <p><strong>Address:</strong> Schaffhauserstrasse 458, 8057 Zürich, Switzerland</p>
-  </div>  <div class="section" id="contact" class="contact-section">
-    <h2>Contact & Customer Service</h2>
-    <p>Email us at: <strong>support@jenniferfashion.com</strong></p>
-    <p>Phone: <strong>+41 43 321 86 98</strong></p>
-  </div>  <footer>
-    &copy; 2025 JR | Jennifer Fashion. All rights reserved.<br>
-    Luxury Designed in Zürich. Global Style. Timeless Elegance.
-  </footer>
+  <header>
+    <div class="logo">JR</div>
+    <div class="tagline">Jennifer - Luxury Women's Fashion</div>
+    <a href="#cart" class="cart-button">Cart <span id="cart-count">(0)</span></a>
+  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#stores">Stores</a>
+    <a href="#factory">Factory</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <div class="section" id="about">
+    <h2>About Jennifer</h2>
+    <p>
+      Founded by Daniel Soufi, Jennifer is a global brand using premium materials like organic silk,
+      pure cotton, and high-end European fabrics. Jennifer competes with the world’s leading fashion houses.
+      Shop from anywhere via Amazon or our official website.
+    </p>
+    <a class="btn" href="#stores">View Stores</a>
+    <a class="btn" href="#factory">Factory Info</a>
+  </div>
+  <div class="section" id="stores">
+    <h2>Our Stores</h2>
+    <p>Visit our luxury boutiques at:</p>
+    <p><strong>Zurich:</strong> Unit 13, Hallway T9, Ground Floor, Letzipark, Zürich</p>
+    <p><strong>Dubai:</strong> Store 105, Souk Madinat Jumeirah, Dubai</p>
+    <p><strong>Seoul:</strong> A7, Ground Floor, Doota Mall, Dongdaemun, Seoul</p>
+  </div>
+  <div class="section" id="factory">
+    <h2>Jennifer Factory in Zürich</h2>
+    <p>
+      Our newly operational next-generation fashion factory in Zurich is now live,
+      showcasing precision, craftsmanship, and the future of luxury design.
+    </p>
+    <p><strong>Address:</strong> Schaffhauserstrasse 458, 8057 Zürich, Switzerland</p>
+    <a class="btn" href="#">Discover More</a>
+  </div>
+  <div class="section" id="products">
+    <h2>Our Products</h2>
+    <div class="product-container">
+      <div class="product">
+        <img src="https://github.com/Jenniferzurich/Jenniferfashion/raw/main/Screenshot_20250409_173603_Chrome.jpg" alt="Cream Outfit" />
+        <div class="product-details">
+          <h3>Cream Blouse and Trousers</h3>
+          <p>$140</p>
+          <select>
+            <option selected disabled>Select Size</option>
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+            <option>X-Large</option>
+          </select>
+          <input type="number" min="1" max="6" value="1" />
+          <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+          <div class="paypal-button">
+            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YOUR_BUTTON_ID" target="_blank">Buy with PayPal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <div class="section" id="reviews">
+    <h2>Customer Reviews</h2>
+    <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+      <p><strong>Sara M. (Dubai):</strong> “The quality is unbelievable. Jennifer has completely changed how I shop for fashion.”</p>
+      <p><strong>Elena R. (Zürich):</strong> “The fabrics feel so premium and the style is just timeless. 5 stars from me.”</p>
+      <p><strong>Min-Ji L. (Seoul):</strong> “Finally found a brand that blends elegance with comfort. Love my Jennifer outfits!”</p>
+      <p><strong>Lana K. (London):</strong> “Fast delivery and perfect fit. Thank you Jennifer team!”</p>
+    </div>
+  </div> 
+
+  <div class="section" id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://source.unsplash.com/featured/?fashion,1" alt="Gallery Image 1" />
+      <img src="https://source.unsplash.com/featured/?luxury,2" alt="Gallery Image 2" />
+      <img src="https://source.unsplash.com/featured/?designer,3" alt="Gallery Image 3" />
+    </div>
+  </div>
+  <div class="section" id="contact">
+    <h2>Contact & Customer Service</h2>
+    <p>Email us at: support@jenniferfashion.com</p>
+    <p>Phone: +41 43 321 86 98</p>
+  </div>
+  <a href="#contact" class="contact-button">Contact Us</a>
+  <footer>
+    &copy; 2025 JR | Jennifer Fashion. All rights reserved.
+  </footer> 
+
+  <!-- سبد خرید پیشرفته -->
+  <script>
+    function addToCart(button) {
+      const productElement = button.closest('.product');
+      const name = productElement.querySelector('h3').innerText;
+      const priceText = productElement.querySelector('p').innerText;
+      const price = parseFloat(priceText.replace('$', ''));
+      const size = productElement.querySelector('select').value;
+      const quantity = parseInt(productElement.querySelector('input[type="number"]').value); 
+
+      // بررسی اندازه و تعداد
+      if (!size || size === 'Select Size') {
+        alert('Please select a size for the product.');
+        return;
+      } 
+
+      if (!quantity || quantity < 1) {
+        alert('Please select a valid quantity (1 or more).');
+        return;
+      } 
+
+      const item = { name, price, size, quantity };
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      cartItems.push(item);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems)); 
+
+      let cartCount = parseInt(localStorage.getItem('cartCount') || '0') + 1;
+      localStorage.setItem('cartCount', cartCount);
+      document.getElementById('cart-count').innerText = '(' + cartCount + ')';
+    } 
+
+    function displayCartItems() {
+      const cartSection = document.getElementById('cart');
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      cartSection.innerHTML = '<h2>Your Cart</h2>'; 
+
+      if (cartItems.length === 0) {
+        cartSection.innerHTML += '<p>Your cart is empty.</p>';
+        return;
+      } 
+
+      let total = 0;
+      cartItems.forEach((item) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        cartSection.innerHTML += `
+          <div style="border-bottom: 1px solid #ccc; padding: 10px 0;">
+            <strong>${item.name}</strong><br>
+            Size: ${item.size} | Quantity: ${item.quantity} | Price: $${item.price} | Total: $${itemTotal.toFixed(2)}
+          </div>
+        `;
+      }); 
+
+      cartSection.innerHTML += `<h3>Total: $${total.toFixed(2)}</h3>`;
+    } 
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const cartCount = localStorage.getItem('cartCount') || 0;
+      document.getElementById('cart-count').innerText = '(' + cartCount + ')'; 
+
+      document.querySelector('.cart-button').addEventListener('click', (e) => {
+        e.preventDefault();
+        displayCartItems();
+        document.getElementById('cart').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script> 
+
+  <div class="section" id="cart" style="display: block; margin-top: 40px;">
+    <!-- Cart items will be shown here -->
+  </div>
 </body>
 </html>
