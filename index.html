@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -147,6 +147,25 @@
       background-color: #444;
       transform: scale(1.05);
     }
+    .paypal-button {
+      margin-top: 10px;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+    .paypal-button a {
+      display: inline-block;
+      background-color: #0070ba;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+    }
+    .paypal-button a:hover {
+      background-color: #005c9c;
+    }
     .gallery {
       display: flex;
       justify-content: center;
@@ -257,6 +276,9 @@
           </select>
           <input type="number" min="1" max="6" value="1" />
           <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+          <div class="paypal-button">
+            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YOUR_BUTTON_ID" target="_blank">Buy with PayPal</a>
+          </div>
         </div>
       </div>
     </div>
