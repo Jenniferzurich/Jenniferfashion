@@ -273,102 +273,21 @@
 
   <div class="section" id="reviews">
     <h2>Customer Reviews</h2>
-    <div style="max-width: 800px; margin: 0 auto; text-align: left;">
-      <p><strong>Sara M. (Dubai):</strong> “The quality is unbelievable. Jennifer has completely changed how I shop for fashion.”</p>
-      <p><strong>Elena R. (Zürich):</strong> “The fabrics feel so premium and the style is just timeless. 5 stars from me.”</p>
-      <p><strong>Min-Ji L. (Seoul):</strong> “Finally found a brand that blends elegance with comfort. Love my Jennifer outfits!”</p>
-      <p><strong>Lana K. (London):</strong> “Fast delivery and perfect fit. Thank you Jennifer team!”</p>
-    </div>
+    <!-- Your customer reviews content can go here -->
   </div>
-
-  <div class="section" id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="https://source.unsplash.com/featured/?fashion,1" alt="Gallery Image 1" />
-      <img src="https://source.unsplash.com/featured/?luxury,2" alt="Gallery Image 2" />
-      <img src="https://source.unsplash.com/featured/?designer,3" alt="Gallery Image 3" />
-    </div>
-  </div>
-  <div class="section" id="contact">
-    <h2>Contact & Customer Service</h2>
-    <p>Email us at: support@jenniferfashion.com</p>
-    <p>Phone: +41 43 321 86 98</p>
-  </div>
-  <a href="#contact" class="contact-button">Contact Us</a>
+  
+  <a href="tel:+41798415700" class="contact-button">Contact Us</a>
   <footer>
-    &copy; 2025 JR | Jennifer Fashion. All rights reserved.
+    <p>&copy; 2025 Jennifer Fashion. All rights reserved.</p>
   </footer>
 
-  <!-- سبد خرید پیشرفته -->
   <script>
+    let cartCount = 0;
+
     function addToCart(button) {
-      const productElement = button.closest('.product');
-      const name = productElement.querySelector('h3').innerText;
-      const priceText = productElement.querySelector('p').innerText;
-      const price = parseFloat(priceText.replace('$', ''));
-      const size = productElement.querySelector('select').value;
-      const quantity = parseInt(productElement.querySelector('input[type="number"]').value);
-
-      // بررسی اندازه و تعداد
-      if (!size || size === 'Select Size') {
-        alert('Please select a size for the product.');
-        return;
-      }
-
-      if (!quantity || quantity < 1) {
-        alert('Please select a valid quantity (1 or more).');
-        return;
-      }
-
-      const item = { name, price, size, quantity };
-      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      cartItems.push(item);
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-      let cartCount = parseInt(localStorage.getItem('cartCount') || '0') + 1;
-      localStorage.setItem('cartCount', cartCount);
-      document.getElementById('cart-count').innerText = '(' + cartCount + ')';
+      cartCount++;
+      document.getElementById('cart-count').innerText = `(${cartCount})`;
     }
-
-    function displayCartItems() {
-      const cartSection = document.getElementById('cart');
-      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      cartSection.innerHTML = '<h2>Your Cart</h2>';
-
-      if (cartItems.length === 0) {
-        cartSection.innerHTML += '<p>Your cart is empty.</p>';
-        return;
-      }
-
-      let total = 0;
-      cartItems.forEach((item) => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-        cartSection.innerHTML += `
-          <div style="border-bottom: 1px solid #ccc; padding: 10px 0;">
-            <strong>${item.name}</strong><br>
-            Size: ${item.size} | Quantity: ${item.quantity} | Price: $${item.price} | Total: $${itemTotal.toFixed(2)}
-          </div>
-        `;
-      });
-
-      cartSection.innerHTML += `<h3>Total: $${total.toFixed(2)}</h3>`;
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const cartCount = localStorage.getItem('cartCount') || 0;
-      document.getElementById('cart-count').innerText = '(' + cartCount + ')';
-
-      document.querySelector('.cart-button').addEventListener('click', (e) => {
-        e.preventDefault();
-        displayCartItems();
-        document.getElementById('cart').scrollIntoView({ behavior: 'smooth' });
-      });
-    });
   </script>
-
-  <div class="section" id="cart" style="display: block; margin-top: 40px;">
-    <!-- Cart items will be shown here -->
-  </div>
 </body>
 </html>
