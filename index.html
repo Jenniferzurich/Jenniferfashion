@@ -204,13 +204,48 @@
       color: #555;
       text-align: center;
     }
+    /* Popup styling */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      z-index: 1000;
+      width: 80%;
+      max-width: 600px;
+    }
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #f44336;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">JR</div>
     <div class="tagline">Jennifer - Luxury Women's Fashion</div>
-    <a href="#cart" class="cart-button">Cart <span id="cart-count">(0)</span></a>
+    <a href="#" class="cart-button" id="cart-button">Cart <span id="cart-count">(0)</span></a>
   </header>
   <nav>
     <a href="#about">About</a>
@@ -270,10 +305,13 @@
       </div>
     </div>
   </div>
-
-  <div class="section" id="reviews">
-    <h2>Customer Reviews</h2>
-    <!-- Your customer reviews content can go here -->
+  
+  <div class="popup-overlay" id="popup-overlay"></div>
+  <div class="popup" id="popup">
+    <button class="popup-close" onclick="closePopup()">X</button>
+    <h2>Your Cart</h2>
+    <div id="popup-content"></div>
+    <button class="btn" onclick="checkout()">Checkout</button>
   </div>
   
   <a href="tel:+41798415700" class="contact-button">Contact Us</a>
@@ -283,10 +321,50 @@
 
   <script>
     let cartCount = 0;
+    let cartItems = [];
 
     function addToCart(button) {
+      const product = button.closest('.product');
+      const name = product.querySelector('h3').innerText;
+      const size = product.querySelector('select').value;
+      const quantity = product.querySelector('input[type="number"]').value;
+
+      if (!size || size === "Select Size") {
+        alert("Please select a size.");
+        return;
+      }
+
+      cartItems.push({ name, size, quantity });
       cartCount++;
       document.getElementById('cart-count').innerText = `(${cartCount})`;
+
+      // Update the popup content
+      updatePopupContent();
+    }
+
+    function updatePopupContent() {
+      const popupContent = document.getElementById('popup-content');
+      popupContent.innerHTML = '';
+      
+      cartItems.forEach(item => {
+        popupContent.innerHTML += `
+          <p>${item.name} - ${item.size} - Quantity: ${item.quantity}</p>
+        `;
+      });
+    }
+
+    document.getElementById('cart-button').addEventListener('click', function() {
+      document.getElementById('popup-overlay').style.display = 'block';
+      document.getElementById('popup').style.display = 'block';
+    });
+
+    function closePopup() {
+      document.getElementById('popup-overlay').style.display = 'none';
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    function checkout() {
+      alert("Proceeding to checkout...");
     }
   </script>
 </body>
